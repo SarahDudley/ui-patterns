@@ -1,55 +1,63 @@
 {
-  "uuid": "5e8eec99-fa47-4edf-997c-e28d9b3c5c35",
-  "shortName": "UI Patterns Demo",
-  "longName": "UI Patterns Demo",
-  "companyName": "PebbleDev",
-  "versionCode": 4,
-  "versionLabel": "1.3",
-  "sdkVersion": "3",
-  "targetPlatforms": ["aplite", "basalt", "chalk"],
-  "watchapp": {
-    "watchface": false
-  },
-  "appKeys": {
-    "dummy": 0
-  },
-  "resources": {
-    "media": [
-      {
-        "type": "bitmap",
-        "name": "TICK_BLACK",
-        "file": "images/tick_black.png"
-      },
-      {
-        "type": "bitmap",
-        "name": "TICK_WHITE",
-        "file": "images/tick_white.png"
-      },
-      {
-        "type": "bitmap",
-        "name": "CONFIRM",
-        "file": "images/confirm.png"
-      },
-      {
-        "type": "bitmap",
-        "name": "CROSS",
-        "file": "images/cross.png"
-      },
-      {
-        "type": "bitmap",
-        "name": "TICK",
-        "file": "images/tick.png"
-      },
-      {
-        "type": "bitmap",
-        "name": "WARNING",
-        "file": "images/warning.png"
-      },
-      {
-        "type": "bitmap",
-        "name": "CONFIG_REQUIRED",
-        "file": "images/config-required.png"
-      }
-    ]
-  }
+    "appKeys": {
+        "dummy": 0
+    },
+    "capabilities": [
+        ""
+    ],
+    "companyName": "PebbleDev",
+    "enableMultiJS": false,
+    "longName": "GetMeBacon",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/warning.png",
+                "name": "WARNING",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/tick_white.png",
+                "name": "TICK_WHITE",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/tick_black.png",
+                "name": "TICK_BLACK",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/tick.png",
+                "name": "TICK",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/cross.png",
+                "name": "CROSS",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/confirm.png",
+                "name": "CONFIRM",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/config-required.png",
+                "name": "CONFIG_REQUIRED",
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "GetMeBacon",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "5e8eec99-fa47-4edf-997c-e28d9b3c5c35",
+    "versionLabel": "1.3",
+    "watchapp": {
+        "watchface": false
+    }
 }

@@ -3,7 +3,7 @@
  */
 
 #include "checkbox_window.h"
-
+#include <stdio.h>
 static Window *s_main_window;
 static MenuLayer *s_menu_layer;
 
@@ -19,9 +19,11 @@ static void draw_row_callback(GContext *ctx, const Layer *cell_layer, MenuIndex 
     // Submit item
     menu_cell_basic_draw(ctx, cell_layer, "Submit", NULL, NULL);
   } else {
+    char *groceries[] = {"Milk", "Ham", "Eggs", "Bacon", "Corn", "Jam", "Soda", "Wine"};
     // Choice item
+    int i = (int)cell_index->row;
     static char s_buff[16];
-    snprintf(s_buff, sizeof(s_buff), "Choice %d", (int)cell_index->row);
+    snprintf(s_buff, sizeof(s_buff), "%s", groceries[i]);
     menu_cell_basic_draw(ctx, cell_layer, s_buff, NULL, NULL);
 
     // Selected?
@@ -53,6 +55,41 @@ static int16_t get_cell_height_callback(struct MenuLayer *menu_layer, MenuIndex 
       MENU_CELL_ROUND_FOCUSED_SHORT_CELL_HEIGHT : MENU_CELL_ROUND_UNFOCUSED_TALL_CELL_HEIGHT,
     CHECKBOX_WINDOW_CELL_HEIGHT);
 }
+
+
+// beginning of new stuff      START    
+//declare string key 
+//CCCstatic const uint32_t SOME_STRING_KEY = 0xabbababe;
+//CCStack-allocated buffer in which to create the Dictionary:
+//uint8_t buffer[size];
+//CCIterator variable, keeps the state of the creation serialization process:
+//DictionaryIterator iter;
+//CCThe following declaration represents the array of the grocery list.
+//static const char *string[] = {"Milk", "Ham", "Eggs", "Bacon","Corn", "Jam", "Soda", "Wine"};
+//CCIf row connects with a checkbox, do something with it
+//if(cell_index->row == CHECKBOX_WINDOW_NUM_ROWS) {
+    //CCThe following int array will be changed depending on if a selection is made.
+  //  int isSelected[] = {0,0,0,0,0,0,0,0}
+    //for(int i = 0; i < CHECKBOX_WINDOW_NUM_ROWS; i++)
+   // {
+      //CCCheck if the row has a check mark
+    //if(s_selections[i] == "selected")
+      //{
+          //CCEach "selected" list item will update the "isSelected" array
+        //  isSelected[i] = 1;
+      //}
+   // }
+    //CCIterate through "isSelected" array
+    //for (int i=0; i < CHECKBOX_WINDOW_NUM_ROWS)
+    // window_stack_pop(true);
+  //} else {
+    //CCCheck/uncheck
+    //int row = cell_index->row;
+    //s_selections[row] = !s_selections[row];
+    //menu_layer_reload_data(menu_layer);
+ // }
+//}
+// end of new stuff          END
 
 static void select_callback(struct MenuLayer *menu_layer, MenuIndex *cell_index, void *callback_context) {
   if(cell_index->row == CHECKBOX_WINDOW_NUM_ROWS) {
