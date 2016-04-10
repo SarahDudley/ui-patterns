@@ -7,3 +7,6 @@
 #define CHECKBOX_WINDOW_CELL_HEIGHT 44
 
 void checkbox_window_push();
+//my declarations
+//static int allocateArrayNum(bool ifChecked);
+//end of my declarations

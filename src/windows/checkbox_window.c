@@ -56,40 +56,68 @@ static int16_t get_cell_height_callback(struct MenuLayer *menu_layer, MenuIndex 
     CHECKBOX_WINDOW_CELL_HEIGHT);
 }
 
+// // beginning of new stuff      START
+// //The following function will return an integer which will represent the total elements to allocate
+// static int allocateArrayNum(s_selected[i])
+// {
+//   int totalAllocate = 0
+//   for (int i=0; i<CHECKBOX_WINDOW_NUM_ROWS;i++)
+//   {
+//    if(s_selected[i])
+//     {
+//       totalAllocate++;
+//     } 
+//   }
+//   return totalAllocate;
+// }
 
-// beginning of new stuff      START    
-//declare string key 
-//CCCstatic const uint32_t SOME_STRING_KEY = 0xabbababe;
-//CCStack-allocated buffer in which to create the Dictionary:
-//uint8_t buffer[size];
-//CCIterator variable, keeps the state of the creation serialization process:
-//DictionaryIterator iter;
-//CCThe following declaration represents the array of the grocery list.
-//static const char *string[] = {"Milk", "Ham", "Eggs", "Bacon","Corn", "Jam", "Soda", "Wine"};
-//CCIf row connects with a checkbox, do something with it
-//if(cell_index->row == CHECKBOX_WINDOW_NUM_ROWS) {
-    //CCThe following int array will be changed depending on if a selection is made.
-  //  int isSelected[] = {0,0,0,0,0,0,0,0}
-    //for(int i = 0; i < CHECKBOX_WINDOW_NUM_ROWS; i++)
-   // {
-      //CCCheck if the row has a check mark
-    //if(s_selections[i] == "selected")
-      //{
-          //CCEach "selected" list item will update the "isSelected" array
-        //  isSelected[i] = 1;
-      //}
-   // }
-    //CCIterate through "isSelected" array
-    //for (int i=0; i < CHECKBOX_WINDOW_NUM_ROWS)
-    // window_stack_pop(true);
-  //} else {
-    //CCCheck/uncheck
-    //int row = cell_index->row;
-    //s_selections[row] = !s_selections[row];
-    //menu_layer_reload_data(menu_layer);
- // }
-//}
-// end of new stuff          END
+
+// //declare string key 
+// Cstatic const uint32_t SOME_STRING_KEY = 0xabbababe;
+// //Stack-allocated buffer in which to create the Dictionary:
+// uint8_t buffer[size];
+// //Iterator variable, keeps the state of the creation serialization process:
+// DictionaryIterator iter;
+// //The following declaration represents the array of the grocery list.
+// static const char *oldString[] = {"Milk", "Ham", "Eggs", "Bacon","Corn", "Jam", "Soda", "Wine"};
+// //If row connects with a checkbox, do something with it
+// if(cell_index->row == CHECKBOX_WINDOW_NUM_ROWS) {
+//     //create counter that will represent the # of checked strings.
+//     int totalChecks = 0;
+//     //Iterate through "isSelected" array
+//     for (int i=0; i < CHECKBOX_WINDOW_NUM_ROWS; i++)
+//     {
+//       if (s_selected[i] == 1)
+//       {
+//         totalChecks++;
+//       }
+//     }
+//     //Use totalChecks to create a new array of ONLY checked strings
+//     static char *newString[totalChecks];
+//     //Declare and integer that will keep up with the index of the new string
+//     int indexOfNew = 0;
+//     //Iterate through the new array and insert the corresponding checked strings
+//     for (int i=0; i < CHECKBOX_WINDOW_NUM_ROWS; i++)
+//     {
+//       //if a checked string is encountered, update the new array.
+//       if(s_selected[i] == 1)
+//       {
+//         //Take string from old array and add it into new array.
+//         newString[indexOfNew] = oldString[i];
+//         indexOfNew++;
+//       }
+//     }
+//   //pop a layer off the window layer
+//   //   window_stack_pop(true);            ??????Commented Out
+//   } 
+// //else {                                              ????Commented Out
+//     //Check/uncheck                                  ????Commented Out
+//   //  int row = cell_index->row;                      ????Commented Out
+//   //  s_selections[row] = !s_selections[row];        ????Commented Out
+//   //  menu_layer_reload_data(menu_layer);            ????Commented Out
+//   //}                                                ????Commented Out
+// }
+// // end of new stuff          END
 
 static void select_callback(struct MenuLayer *menu_layer, MenuIndex *cell_index, void *callback_context) {
   if(cell_index->row == CHECKBOX_WINDOW_NUM_ROWS) {
